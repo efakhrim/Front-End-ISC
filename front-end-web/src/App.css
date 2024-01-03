@@ -1,0 +1,102 @@
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .bg {
+    background-image: url('../src/assets/LandingPageBackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .signup {
+    color: #ffffff;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #5655b0;
+    border-radius: 15px;
+    height: 56px;
+    left: 100px;
+    position: absolute;
+    top: 440px;
+    width: 455px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  button:active {
+    transform: scale(0.96);
+  }
+  
+  .signin {
+    color: #5655b0;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 20px;
+    background-color: #ffffff;
+    border: 2px solid;
+    border-color: #5655b0;
+    border-radius: 15px;
+    height: 56px;
+    left: 310px;
+    position: absolute;
+    top: 440px;
+    width: 160px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+   
+  .welcome {
+    color: #5655b0;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+    left: 100px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 141px;
+  }
+  
+  .kalimat-1{
+    color: #2E2E2E;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 40px;
+    font-weight: 700;
+    left: 100px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 190px;
+    width: 497px;
+  }
+  
+  .kalimat-2 {
+    color: #2E2E2E;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: justify;
+    left: 100px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 295px;
+    width: 455px;
+  }
+  
+ .image {
+
+    width: 524px;
+    aspect-ratio: 9/8 ;
+  }
+
+  .image img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    left: 660px;    
+  }
+  

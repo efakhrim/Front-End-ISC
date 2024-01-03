@@ -1,0 +1,49 @@
+/* src/App.css */
+
+.monitoting {
+  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  color: #323232;
+}
+
+.table-monitor {
+  
+  overflow: hidden;
+  table-layout:fixed;
+  border-collapse:collapse;
+  border-radius: 10px;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 100%;
+  margin:0;
+  table-layout:auto;
+  overflow-x: auto;
+  background-color: aliceblue;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+}
+  
+  #video-feed {
+    width: 100%;
+    max-width: 500px;
+  }
+
+.table-monitor td {
+  padding: 0.8rem;
+  font-family: Montserrat ;
+}
+
+.table-monitor td {
+  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  color: #323232;
+}
+
+.table-monitor tbody tr:hover {
+  background-color: #cee2f7;
+}
+
+

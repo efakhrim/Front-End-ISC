@@ -1,0 +1,66 @@
+.table-wrapper {
+  width: 100%;
+  margin: 1% 0;
+}
+
+.table {
+  
+  overflow: hidden;
+  border-collapse:collapse;
+  border-radius: 10px;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 100%;
+  margin:0;
+  table-layout:auto;
+  overflow-x: auto;
+  background-color: aliceblue;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+  justify-content: space-between;
+}
+
+.table thead {
+  color: #4d4d4d;
+}
+
+.stathis {
+  justify-content: space-between;
+}
+
+.table th,
+.table td {
+  padding: 0.8rem;
+  font-family: Montserrat ;
+  justify-content: space-between;
+}
+
+.table td {
+  border-top: 0.5px solid #545454;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  color: #323232;
+  justify-content: space-between;
+}
+
+.table tbody tr:hover {
+  background-color: #cee2f7;
+}
+
+.expand {
+  width: 100%;
+}
+
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.actions svg {
+  cursor: pointer;
+}
+
+.delete-btn {
+  color: #e10d05;
+}
