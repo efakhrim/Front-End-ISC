@@ -1,13 +1,16 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
+
 import {
-    FaTh,
     FaBars,
-    FaHistory,
-    FaBabyCarriage,
+    FaSignOutAlt ,
     FaTv,
+    FaList, 
 }from "react-icons/fa";
+import {
+    MdDashboard
+}from "react-icons/md";
 import { NavLink } from 'react-router-dom';
 import "./Sidebar.css"
 
@@ -15,12 +18,19 @@ import "./Sidebar.css"
 // eslint-disable-next-line react/prop-types
 const Sidebar = ({children}) => {
     const[isOpen ,setIsOpen] = useState(true);
+    
     const toggle = () => setIsOpen (!isOpen);
+ 
     const menuItem=[
         {
-            path:"/home",
+            path:"/dashboard",
             name:"Dashboard",
-            icon: <FaTh/>
+            icon: <MdDashboard/>
+        },
+        {
+            path:"/home",
+            name:"Incubator List",
+            icon: <FaList/>
         },
         {
             path:"/monitoring",
@@ -28,14 +38,11 @@ const Sidebar = ({children}) => {
             icon:<FaTv/>
         },
         {
-            path:"/control",
-            name:"Incubator Control",
-            icon:<FaBabyCarriage/>
-        },
-        {
-            path:"/history",
-            name:"History",
-            icon:<FaHistory/>
+            // Add a logout menu item
+            path: "/",
+            name: "Logout",
+            icon: <FaSignOutAlt />,
+            
         },
 
     ]
@@ -43,7 +50,7 @@ const Sidebar = ({children}) => {
         <div className="container">
            <div style={{width: isOpen ? "210px" : "52px"}} className="sidebar">
                <div className="top_section">
-                   <h1 style={{display: isOpen ? "block" : "none"}} className="logo">ISC</h1>
+                   <img style={{display: isOpen ? "block" : "none"}} src="/src/assets/logo-ISC.png" className='logo' ></img>
                    <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars">
                        <FaBars onClick={toggle}/>
                    </div>

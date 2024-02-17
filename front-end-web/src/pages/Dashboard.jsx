@@ -1,101 +1,103 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react'
+import React from 'react'
 import Sidebar from "../components/Sidebar"
-//import DummyData from "./DUMMY_DATA.json"
-import "./Dashboard.css"
-import { Table } from "../components/Table";
-import { Modal } from "../components/Modal";
-import { EditList } from '../components/EditList';
-//import axios from 'axios';
-//import DataTable from 'react-data-table-component'
-
-//import { useTable } from "react-table";
+import Profile from "../components/Profile"
+import Grid from '@mui/material/Grid'
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+//import { Table } from "../components/HistoryTab";
+//import {Content} from "../components/DBContent"
+import "./History.css"
 
 
 const Dashboard = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [ setEditOpen] = useState(false);
-    const [rows, setRows] = useState([
-      {
-        incubator_id: "",
-        name: "",
-        birth_date: "",
-        gender: "",
-        parents: ""
-      },
-
-    ]);
-    const [rowToEdit, setRowToEdit] = useState(null);
-
-    const handleDeleteRow = async (targetIndex) => {
-      setRows(rows.filter((_, idx) => idx !== targetIndex));
-      
-
-    };
-  
-    const handleEditRow = (idx) => {
-      setRowToEdit(idx);
-      setModalOpen(true);
-    };
-  
-    const handleSubmit = (newRow) => {
-
-      rowToEdit === null
-        ? setRows([...rows, newRow])
-        : setRows(
-            rows.map((currRow, idx) => {
-              if (idx !== rowToEdit) return currRow;
-  
-              return newRow;
-            })
-          );
-      alert('List has been added, click "OK" then refresh the page');
-        
-    };
-
-
-    return (
-    <div className='home-page'>
-      <div className='bg-home'>
+  return (
+    <div className='history-page'>
+      <div className='bg-history'>
         <Sidebar>
-          <div className='db'>
-            <div className='text'>Add Incubator List</div>
+          <div className='his'>
+            <Profile></Profile>
+            <div className='text'>Dashboard Page</div>
             <br></br>
-            <div className='lst'>Incubator List</div>
-            <Table rows={rows} deleteRow={handleDeleteRow} editRow={handleEditRow} />
-            <button onClick={() => setModalOpen(true)} className="add-btn">
-              Add
-            </button>
-      
-            {modalOpen && (
-              <Modal
-                closeModal={() => {
-                  setModalOpen(false);
-                  setRowToEdit(null);
-                }}
-                onSubmit={handleSubmit}
-                defaultValue={rowToEdit !== null && rows[rowToEdit]}
-              />
-              
-            )}
-            {setEditOpen && (
-              <EditList
-                closeModal={() => {
-                  setEditOpen(false);
-                  setRowToEdit(null);
-                }}
-                onSubmit={handleSubmit}
-                defaultValue={rowToEdit !== null && rows[rowToEdit]}
-              />
-              
-            )}
-  
+            <div>
+            <Grid container spacing={2}>
+              <Grid item xs={4} md={8}>
+                <Stack spacing={2} direction="row">
+                  <Card sx={{ maxWidth: 345 }}>
+   
+                    <image src="/src/assets/logo-ISC.png"></image>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        Lizard
+                      </Typography>
+                      <image src="/src/assets/logo-ISC.png"></image>
+                      <Typography variant="body2" color="text.secondary"><image src="/src/assets/logo-ISC.png"></image>
+                        Lizards are a widespread group of squamate reptiles, with over 6,000
+                        species, ranging across all continents except Antarctica
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Button size="small">Share</Button>
+                      <Button size="small">Learn More</Button>
+                    </CardActions>
+                  </Card>
+                  <Card sx={{ maxWidth: 345 }}>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        Lizard
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Lizards are a widespread group of squamate reptiles, with over 6,000
+                        species, ranging across all continents except Antarctica
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Button size="small">Share</Button>
+                      <Button size="small">Learn More</Button>
+                    </CardActions>
+                  </Card>
+                </Stack>
+              </Grid>
+              <Grid item xs={6} md={4}>
+                <Stack spacing={2} direction="row">
+                  <Card sx={{ maxWidth: 345 }}>
+                    <CardMedia
+                      sx={{ height: 140 }}
+                      image="/static/images/cards/contemplative-reptile.jpg"
+                      title="green iguana"
+                    />
+                    <CardContent>
+
+                    </CardContent>
+                    <CardActions>
+                      <Button size="small">Share</Button>
+                      <Button size="small">Learn More</Button>
+                    </CardActions>
+                  </Card>
+                  
+                </Stack>
+              </Grid>
+              <Grid item xs={6} md={4}>
+                
+              </Grid>
+              <Grid item xs={6} md={8}>
+                
+              </Grid>
+            </Grid>
+            </div>
+            
+            
           </div>
         </Sidebar>
       </div>
+
     </div>
   )
 }
-
 
 export default Dashboard

@@ -14,12 +14,12 @@ export const EditList = ({ defaultValue}) => {
   const [formState, setFormState] = useState(
      defaultValue || {
       name: "",
-      parents:"",
+      parent:"",
       gender: "Male",
     }
   );
   
-  const {incubator_id} = useParams()
+  const {baby_id} = useParams()
 
   useEffect(() => {
     loadData();
@@ -27,14 +27,14 @@ export const EditList = ({ defaultValue}) => {
   },[]);
 
   const loadData = async () => {
-    const result = await axios.get(`http://157.230.37.110:3000/incubator/${incubator_id}`);
+    const result = await axios.get(`http://157.230.37.110:3000/baby/${baby_id}`);
     setFormState(result.data);
   };
 
   const [errors, setErrors,] = useState("");
 
   const validateForm = () => {
-    if (formState.name && formState.birth_date && formState.gender && formState.parents) {
+    if (formState.name && formState.birth_date && formState.gender && formState.parent) {
       setErrors("");
       return true;
     } else {
@@ -56,7 +56,7 @@ export const EditList = ({ defaultValue}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateForm()) return;
-    axios.patch(`http://157.230.37.110:3000/incubator/${incubator_id}`, formState)
+    axios.patch(`http://157.230.37.110:3000/baby/${baby_id}`, formState)
     .then((response) => {
       console.log(response);
     }, (error) => {
@@ -88,11 +88,19 @@ export const EditList = ({ defaultValue}) => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="parents">Mother Name</label>
+            <label htmlFor="parent">Mother Name</label>
             <input
-              name="parents"
+              name="parent"
               onChange={handleChange}
-              value={formState.parents}
+              value={formState.parent}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="incubator_id">ID</label>
+            <input
+              name="incubator_id"
+              onChange={handleChange}
+              value={formState.incubator_id}
             />
           </div>
           <div className="form-group">

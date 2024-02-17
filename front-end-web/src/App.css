@@ -10,6 +10,7 @@
     height: 100vh;
     position: relative;
   }
+
   
   .signup {
     color: #ffffff;
@@ -88,7 +89,7 @@
   }
   
  .image {
-
+    
     width: 524px;
     aspect-ratio: 9/8 ;
   }

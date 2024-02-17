@@ -64,3 +64,29 @@
 .delete-btn {
   color: #e10d05;
 }
+
+.table tbody .extended-history {
+  max-height: 100px; /* Adjust the maximum height as needed */
+  overflow-y: auto;
+}
+
+tr .history-scroll {
+  max-height: 100px; /* Set a maximum height for the scrollable area */
+  overflow-y: auto; /* Add a vertical scrollbar when content exceeds the maximum height */
+}
+
+.history-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid #ccc; /* Add a border between history items */
+}
+
+.history-item:last-child {
+  border-bottom: none; /* Remove the border from the last history item */
+}

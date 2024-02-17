@@ -30,12 +30,7 @@ main{
     padding:20px 15px;
 }
 .logo{
-    color: #5755B0;
-    font-family: Kings;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    width: 80px;
     
 }
 .bars{

@@ -1,0 +1,14 @@
+.hospital {
+    color: #848484;
+    padding: 0,7rem;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 10;
+    line-height:normal;
+    display: flex;
+    padding: 10px 1%;
+    align-items:start;
+    gap: 10px;
+    margin-left: 75%;
+}

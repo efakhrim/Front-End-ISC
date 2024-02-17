@@ -3,8 +3,9 @@
 import React, {useState, useEffect}from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
-
+import { useNavigate } from "react-router-dom";
+//import {useHistory} from 'react-router-dom'
+//import setAuthToken from "../auth/setAuthToken";
 import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
 
 import "./Table.css";
@@ -12,17 +13,39 @@ import "./Table.css";
 export const Table = () => {
   const [rows, setList] = useState([]);
 
-  useEffect(() => {
+  let navigate = useNavigate();
 
+  //const history = useHistory();
+  
+
+  useEffect(() => {
+    const token =localStorage.getItem('token');
+    if(token) {
+      axios.defaults.headers.common['Authorization']= ` ${token}`
+    }
     loadList();
+             // Set up an interval to fetch data periodically
+             const intervalId = setInterval(() => {
+              loadList();
+            }, 500); // Fetch data every 5 seconds (adjust the interval as needed)
+        
+            // Clean up the interval when the component is unmounted
+            return () => clearInterval(intervalId);
   }, []);
+
   const loadList = async () => {
-    const result = await axios.get("http://157.230.37.110:3000/incubator");
-    setList(result.data);
+    try {
+      const result = await axios.get("http://157.230.37.110:3000/baby/account")
+      setList(result.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      navigate("/auth");
+      
+    }
   };
 
-  const deleteRow = async (incubator_id) => {
-    await axios.delete(`http://157.230.37.110:3000/incubator/${incubator_id}`);
+  const deleteRow = async (baby_id) => {
+    await axios.delete(`http://157.230.37.110:3000/baby/${baby_id}`);
     loadList();
   }
 
@@ -31,6 +54,7 @@ export const Table = () => {
       <table className="table">
         <thead>
           <tr>
+            
             <th>Incubator ID</th>
             <th >Baby Name</th>
             <th >Born Date</th>
@@ -45,18 +69,19 @@ export const Table = () => {
 
             return (
               <tr key={idx}>
+                
                 <td>{row.incubator_id}</td>
                 <td>{row.name}</td>
                 <td>{row.birth_date}</td>
                 <td>{row.gender}</td>
-                <td>{row.parents}</td>
+                <td>{row.parent}</td>
                 <td className="fit">
                   <span className="actions">
                     <BsFillTrashFill
                       className="delete-btn"
-                      onClick={() => deleteRow(row.incubator_id)}
+                      onClick={() => deleteRow(row.baby_id)}
                     />
-                    <Link to={`/editlist/${row.incubator_id}`}>
+                    <Link to={`/editlist/${row.baby_id}`}>
                       <BsFillPencilFill
                         className="edit-btn"
                       />

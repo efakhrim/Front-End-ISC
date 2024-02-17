@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import Sidebar from "../components/Sidebar"
+import Profile from "../components/Profile"
 import "./Monitoring.css"
 import Monitor from "../components/Monitor"
 
@@ -10,6 +11,7 @@ const Monitoring = () => {
       <div className='bg-monitoring'>
         <Sidebar>
           <div className='mon'>
+            <Profile></Profile>
             <div className='text'>Monitoring Page</div>
           </div>
           <div>

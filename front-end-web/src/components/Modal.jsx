@@ -9,7 +9,7 @@ export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
   const [formState, setFormState] = useState(
     defaultValue || {
       name: "",
-      parents:"",
+      parent:"",
       birth_date:"",
       gender: "Male",
     }
@@ -18,7 +18,7 @@ export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
   
 
   const validateForm = () => {
-    if (formState.name && formState.birth_date && formState.gender && formState.parents) {
+    if (formState.name && formState.birth_date && formState.gender && formState.parent && formState.incubator_id ) {
       setErrors("");
       return true;
     } else {
@@ -42,7 +42,7 @@ export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
     if (!validateForm()) return;
     onSubmit(formState);
     closeModal();
-    axios.post('http://157.230.37.110:3000/incubator', formState)
+    axios.post('http://157.230.37.110:3000/baby/account', formState)
     .then((response) => {
       console.log(response);
     }, (error) => {
@@ -78,11 +78,19 @@ export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="parents">Mother Name</label>
+            <label htmlFor="parent">Mother Name</label>
             <input
-              name="parents"
+              name="parent"
               onChange={handleChange}
-              value={formState.parents}
+              value={formState.parent}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="incubator_id">ID</label>
+            <input
+              name="incubator_id"
+              onChange={handleChange}
+              value={formState.incubator_id}
             />
           </div>
           <div className="form-group">
