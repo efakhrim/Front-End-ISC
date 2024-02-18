@@ -10,8 +10,8 @@ function Navbar() {
         </div>
         <ul className='navbar-menu'>
             <li><a href='/'>Login Page</a></li>
-            <li><a href='/'>Service</a></li>
-            <li><a href='/'>Contact</a></li>
+            <li><a href='/about'>About</a></li>
+            <li><a href='/contact'>Contact</a></li>
         </ul>
     </div>
   )

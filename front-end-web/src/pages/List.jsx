@@ -64,11 +64,10 @@ const List = () => {
       <div className='bg-home'>
         <Sidebar>
           <div className='db'>
-            <Profile></Profile>
-            <div className='text'>Add Incubator List</div>
+            <div className='text'>Add Incubator List<Profile></Profile></div>
             
             <br></br>
-            <div className='lst'>Incubator List</div>
+            
             <Table rows={rows} deleteRow={handleDeleteRow} editRow={handleEditRow} />
             <button onClick={() => setModalOpen(true)} className="add-btn">
               Add

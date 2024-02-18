@@ -75,6 +75,7 @@ export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
               name="birth_date"
               onChange={handleChange}
               value={formState.birth_date}
+              placeholder="ex: 04/09/2023 04:30"
             />
           </div>
           <div className="form-group">
@@ -86,11 +87,12 @@ export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="incubator_id">ID</label>
+            <label htmlFor="incubator_id">Incubator ID</label>
             <input
               name="incubator_id"
               onChange={handleChange}
               value={formState.incubator_id}
+              placeholder="3 digits on incubator"
             />
           </div>
           <div className="form-group">

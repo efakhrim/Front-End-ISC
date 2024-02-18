@@ -1,8 +1,5 @@
 /* Charts.css */
 .charts-container {
-  display:flex;
-  justify-content:space-around;
-  padding: 50px;
   background-color: #E0EAF6;
 }
 
@@ -42,15 +39,19 @@
 }
 .head{
   color: #848484;
-  padding: 0,7rem;
   font-family: Montserrat;
+  justify-content: center;
   font-size: 20px;
   font-weight: 800;
-  letter-spacing: 10;
-  line-height:normal;
+  left: 100px;
+  letter-spacing: 0;
+  line-height: normal;
+  top: 190px;
   display: flex;
-  padding: 10px 1%;
-  align-items:start;
-  gap: 10px;
-  margin-left: 10%;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+  padding: 0.7rem;
+  align-items: center;
 }
+
+

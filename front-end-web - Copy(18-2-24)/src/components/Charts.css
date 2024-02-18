@@ -1,0 +1,57 @@
+/* Charts.css */
+.charts-container {
+  background-color: #E0EAF6;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+/* Optional: Style for individual charts */
+.recharts-wrapper {
+  border: 1px solid #ccc;
+  background-color: #ffff;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recharts-surface {
+  border-radius: 5px;
+}
+
+.recharts-legend-item {
+  font-size: 14px;
+}
+
+.recharts-tooltip {
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recharts-tooltip-label {
+  font-weight: bold;
+}
+
+.recharts-tooltip-item {
+  font-size: 14px;
+}
+.head{
+  color: #848484;
+  font-family: Montserrat;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 500;
+  left: 100px;
+  letter-spacing: 0;
+  line-height: normal;
+  top: 190px;
+  display: flex;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+  padding: 0.7rem;
+  align-items: center;
+}
+
+

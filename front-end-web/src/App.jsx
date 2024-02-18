@@ -16,7 +16,7 @@ const App = () => {
         
           <div className="welcome">Welcome</div>
           <p className="kalimat-1">
-            Care for your baby <br />
+            Take care your baby <br />
             with extra love affection
           </p>
           <p className="kalimat-2">

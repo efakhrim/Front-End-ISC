@@ -11,9 +11,9 @@ const Monitoring = () => {
       <div className='bg-monitoring'>
         <Sidebar>
           <div className='mon'>
-            <Profile></Profile>
-            <div className='text'>Monitoring Page</div>
+            <div className='text'>Monitoring Page<Profile></Profile></div>
           </div>
+          <br/>
           <div>
             <Monitor></Monitor>
           </div>

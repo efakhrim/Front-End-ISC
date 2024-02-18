@@ -1,0 +1,20 @@
+.bg-dashboard {
+    background-color: #E0EAF6;
+}
+
+.cardcontent {
+    color: rgb(255, 255, 255);  
+}
+
+.color {
+    background: rgb(40,34,70);
+    background: linear-gradient(158deg, #65A8CE 0%, #d0e1e7 100%);
+}
+.colorMiddle{
+    background: rgb(40,34,70);
+    background: linear-gradient(158deg, #719ec8 0%, #d2d6dc 100%);
+}
+.colorRight{
+    background: rgb(34, 70, 52);
+    background: linear-gradient(158deg, #719ec8 0%, #d2dcd4 100%);
+}

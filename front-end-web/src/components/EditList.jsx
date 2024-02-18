@@ -96,7 +96,7 @@ export const EditList = ({ defaultValue}) => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="incubator_id">ID</label>
+            <label htmlFor="incubator_id">Incubator ID</label>
             <input
               name="incubator_id"
               onChange={handleChange}
